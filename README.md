@@ -62,9 +62,7 @@ Concurso IFBA IFBaiano/
 ├── app.py                       # Servidor Flask e varredura de arquivos
 ├── questions.json               # Questões objetivas cadastradas
 ├── discursivas.json             # Questões discursivas cadastradas
-├── progress.json                # Persistência de checklists (criado pelo Flask)
-├── download_if_exams.py         # Script Python de apoio para download
-└── README.md                    # Documentação do projeto
+└── progress.json                # Persistência de checklists (criado pelo Flask)
 ```
 
 ---
@@ -91,7 +89,12 @@ Concurso IFBA IFBaiano/
 
 ### 📅 11/07/2026 - Versão Inicial 1.0 (Hub IFBA/IFBaiano)
 - 🏗️ **Estrutura de Pastas**: Criada a árvore do projeto com subpastas organizadas para Editais e Provas de Pedagogo, TAE e Assistente de Alunos.
-- 🐍 **Automação de Downloads (`download_if_exams.py`)**: Script implementado para varrer e baixar editais e mapear cadernos de provas.
+- 🐍 **Automação de Downloads**: Script de download movido para a pasta central de scripts (`_Scripts/download_if_exams.py`).
 - 🎛️ **Dashboard Interativo & Checklist**: Painel responsivo que compila o progresso de estudos dinamicamente de acordo com o cargo escolhido.
 - 🧠 **Simulador & Questões**: Adicionado banco inicial de questões objetivas e estudos de caso discursivos na área educacional.
 - ♿ **WCAG Acessibilidade**: Controles de contraste e tamanho de fonte estruturados com botões sólidos de alta visibilidade alinhados à esquerda da tela.
+- 🎨 **Correções de Layout & Responsividade**:
+  - Removido o conflito de grid duplo que causava o deslocamento e sobreposição dos elementos à direita no desktop.
+  - Implementado menu horizontal responsivo para telas menores que `1024px`, garantindo que os botões de navegação não desapareçam ou fiquem sobrepostos no celular/tablet.
+- 🛡️ **Suporte Estático Completo (GitHub Pages)**: Dados de questões e discursivas embutidos em formato fallback no Javascript principal, garantindo que o simulador e estudos de caso rodem perfeitamente de forma offline sem depender de requisições de API HTTP locais.
+
