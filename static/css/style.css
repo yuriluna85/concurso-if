@@ -1432,3 +1432,39 @@ body.high-contrast .acc-btn {
 .hidden {
   display: none !important;
 }
+
+/* Detailed Quiz Explanations */
+.quiz-detailed-explanations {
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-4);
+}
+
+.quiz-detailed-explanations h5 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: var(--space-3);
+}
+
+.explanation-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.explanation-item {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.correct-badge {
+  color: var(--green-500);
+}
+
+.incorrect-badge {
+  color: var(--text-muted);
+}
