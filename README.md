@@ -100,6 +100,11 @@ Concurso IFBA IFBaiano/
 - 🐛 **Correção de Sintaxe no JS**: Corrigida a duplicidade acidental na declaração de variáveis globais que gerava o erro de sintaxe e impedia a inicialização das funções de navegação no navegador (`switchTab`).
 - 💡 **Análise Detalhada de Alternativas (Simulado)**: Implementado feedback letra a letra (para opções A, B, C, D e E) na correção das questões objetivas, permitindo ao estudante revisar a justificativa individual para cada alternativa correta ou incorreta.
 - 📈 **Atualização da Tabela Salarial**: Substituída a tabela estática de 5 padrões pela tabela oficial e atualizada de 19 padrões de vencimento da carreira PCCTAE Federal (vigência 2026), extraída diretamente da aplicação *Calculadora TAE Federal* e renderizada de forma dinâmica via JS.
+- 🎥 **Nova Aba de Videoaulas**: Integrada nova aba contendo cards organizados por disciplinas básicas (Língua Portuguesa, Raciocínio Lógico) e específicas (Legislação Federal, Legislação Educacional e EPT), com links direcionados para pesquisas e playlists no YouTube.
+- 🧠 **Expansão do Banco de Questões**: Aumentado o simulador para 16 questões robustas e completas com diferentes níveis de dificuldade para os três cargos pedagógicos (Pedagogo, TAE e Assistente de Alunos).
+- 📁 **Download e Organização de Arquivos**: Baixados e salvos PDFs reais diretamente da internet (editais e cadernos de provas anteriores de Institutos Federais) nas respectivas pastas (`editais/` e `provas_gabaritos/[cargo]/`), devidamente integrados e listados na interface.
+
+
 
 
 
