@@ -8,11 +8,6 @@ let currentCargo = "tecnico_assuntos_educacionais";
 let currentTab = "dashboard";
 let checkedItems = [];
 let localFiles = [];
-// --- 1. STATE & GLOBAL CONFIGS -----------------------------
-let currentCargo = "tecnico_assuntos_educacionais";
-let currentTab = "dashboard";
-let checkedItems = [];
-let localFiles = [];
 let currentQuestionIndex = 0;
 let selectedOptionIndex = null;
 
