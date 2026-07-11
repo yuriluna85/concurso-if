@@ -97,4 +97,6 @@ Concurso IFBA IFBaiano/
   - Removido o conflito de grid duplo que causava o deslocamento e sobreposição dos elementos à direita no desktop.
   - Implementado menu horizontal responsivo para telas menores que `1024px`, garantindo que os botões de navegação não desapareçam ou fiquem sobrepostos no celular/tablet.
 - 🛡️ **Suporte Estático Completo (GitHub Pages)**: Dados de questões e discursivas embutidos em formato fallback no Javascript principal, garantindo que o simulador e estudos de caso rodem perfeitamente de forma offline sem depender de requisições de API HTTP locais.
+- 🐛 **Correção de Sintaxe no JS**: Corrigida a duplicidade acidental na declaração de variáveis globais que gerava o erro de sintaxe e impedia a inicialização das funções de navegação no navegador (`switchTab`).
+
 
