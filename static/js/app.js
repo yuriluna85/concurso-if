@@ -26,7 +26,14 @@ let quizQuestions = [
       "Aprendizagem Significativa"
     ],
     "resposta": 0,
-    "justificativa": "Para Vygotsky, a Zona de Desenvolvimento Proximal (ZDP) é a distância entre o desenvolvimento real (o que a criança já faz sozinha) e o potencial (o que faz com ajuda). É nela que o ensino deve atuar para impulsionar a aprendizagem."
+    "justificativa": "Para Vygotsky, a Zona de Desenvolvimento Proximal (ZDP) é a distância entre o desenvolvimento real (o que a criança já faz sozinha) e o potencial (o que faz com ajuda). É nela que o ensino deve atuar para impulsionar a aprendizagem.",
+    "explicacoes": [
+      "Opção CORRETA. A ZDP define exatamente o espaço dinâmico onde ocorrem as interações pedagógicas e a mediação que impulsionam o desenvolvimento latente do sujeito.",
+      "Opção INCORRETA. Este é um conceito pertencente à teoria psicogenética de Jean Piaget, caracterizando o período do pensamento lógico, abstrato e hipotético-dedutivo.",
+      "Opção INCORRETA. A mediação semiótica é a internalização de signos e instrumentos culturais, um mecanismo essencial da teoria de Vygotsky, mas não descreve a distância de desenvolvimento.",
+      "Opção INCORRETA. Adaptação e assimilação são processos biológicos e de equilibração cognitiva propostos por Jean Piaget para explicar a estruturação intelectual.",
+      "Opção INCORRETA. A Aprendizagem Significativa é um conceito formulado por David Ausubel, descrevendo a ancoragem de novos conhecimentos em conceitos subordinantes preexistentes (subsunçores)."
+    ]
   },
   {
     "id": "q2",
@@ -41,7 +48,14 @@ let quizQuestions = [
       "Garantia de padrão de qualidade."
     ],
     "resposta": 3,
-    "justificativa": "O princípio correto é a coexistência de instituições públicas e privadas de ensino e o respeito à diversidade, sendo vedada qualquer imposição de unicidade ideológica, política ou religiosa no ambiente escolar."
+    "justificativa": "O princípio correto é a coexistência de instituições públicas e privadas de ensino e o respeito à diversidade, sendo vedada qualquer imposição de unicidade ideológica, política ou religiosa no ambiente escolar.",
+    "explicacoes": [
+      "Princípio VÁLIDO. Está previsto no inciso I do Artigo 3º da LDB, garantindo que todos tenham igual direito de ingressar e se manter no sistema educacional.",
+      "Princípio VÁLIDO. Consta no inciso II do mesmo artigo, assegurando a liberdade de cátedra e a livre manifestação intelectual e artística dos indivíduos.",
+      "Princípio VÁLIDO. Presente no inciso III, fomenta a pluralidade metodológica e pedagógica como alicerce do pensamento científico e crítico.",
+      "Princípio INCORRETO (Gabarito). A LDB preza pelo pluralismo e tolerância. A 'unicidade de convicções' contraria as premissas constitucionais e as liberdades democráticas.",
+      "Princípio VÁLIDO. Estabelecido no inciso IX do artigo 3º, impõe ao Estado o dever de certificar níveis básicos de infraestrutura e qualidade no ensino."
+    ]
   },
   {
     "id": "q3",
@@ -56,7 +70,14 @@ let quizQuestions = [
       "Garantir a divisão técnica e fragmentada do trabalho pedagógico na instituição."
     ],
     "resposta": 2,
-    "justificativa": "O PPP é um documento de construção coletiva e participativa que define a identidade da escola, suas metas e diretrizes pedagógicas, servindo como guia orientador para a práxis educativa em busca de transformações sociais."
+    "justificativa": "O PPP é um documento de construção coletiva e participativa que define a identidade da escola, suas metas e diretrizes pedagógicas, servindo como guia orientador para a práxis educativa em busca de transformações sociais.",
+    "explicacoes": [
+      "Opção INCORRETA. Embora o PPP seja legalmente exigido, reduzi-lo a um mero papel burocrático ignora sua dimensão política e sua função social e transformadora.",
+      "Opção INCORRETA. O PPP apoia-se na gestão democrática e no diálogo, devendo emanar da participação coletiva, e não de decisões lineares e autoritárias da gestão.",
+      "Opção CORRETA. O PPP traduz a autonomia pedagógica da escola, traçando metas comuns formuladas democraticamente por todos os segmentos da comunidade escolar.",
+      "Opção INCORRETA. O documento busca firmar a identidade e a singularidade da escola diante de sua comunidade local, rechaçando a homogeneização curricular.",
+      "Opção INCORRETA. O PPP busca a articulação interdisciplinar e a totalidade do fazer pedagógico, combatendo a fragmentação mecânica do trabalho docente."
+    ]
   },
   {
     "id": "q4",
@@ -71,7 +92,14 @@ let quizQuestions = [
       "Abstrato-conceitual"
     ],
     "resposta": 1,
-    "justificativa": "O estágio pré-operatório (aproximadamente de 2 a 7 anos) é marcado pela emergência da função simbólica (linguagem, jogo simbólico), pensamento egocêntrico e incapacidade de realizar operações mentais reversíveis."
+    "justificativa": "O estágio pré-operatório (aproximadamente de 2 a 7 anos) é marcado pela emergência da função simbólica (linguagem, jogo simbólico), pensamento egocêntrico e incapacidade de realizar operações mentais reversíveis.",
+    "explicacoes": [
+      "Opção INCORRETA. O estágio sensório-motor (0 a 2 anos) baseia-se na inteligência prática e reflexa, sem representação mental ou pensamento conceitual.",
+      "Opção CORRETA. O estágio pré-operatório introduz o raciocínio semiótico (uso de símbolos para representar objetos) acompanhado da rigidez egocêntrica de perspectiva intelectual.",
+      "Opção INCORRETA. O período operatório concreto (7 a 11 anos) é marcado pelo início da reversibilidade de pensamento e lógica indutiva sobre objetos reais.",
+      "Opção INCORRETA. O período operatório formal (a partir dos 11/12 anos) caracteriza-se pelo raciocínio hipotético-dedutivo e conceitos totalmente abstratos.",
+      "Opção INCORRETA. Este termo não faz parte da taxonomia piagetiana clássica sobre os quatro períodos do desenvolvimento da inteligência."
+    ]
   },
   {
     "id": "q5",
@@ -86,7 +114,14 @@ let quizQuestions = [
       "Dezoito anos de idade incompletos."
     ],
     "resposta": 0,
-    "justificativa": "O art. 2º do ECA define: 'Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.'"
+    "justificativa": "O art. 2º do ECA define: 'Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.'",
+    "explicacoes": [
+      "Opção CORRETA. O ECA adota o limite de 12 anos incompletos (11 anos, 11 meses e 29 dias) para configurar legalmente a infância.",
+      "Opção INCORRETA. Ao completar 12 anos de idade, o indivíduo passa a ser legalmente classificado como adolescente pela legislação.",
+      "Opção INCORRETA. Dez anos incompletos não reflete o marco cronológico fixado pela Lei nº 8.069/1990.",
+      "Opção INCORRETA. O limite de 14 anos não serve de divisão jurídica entre infância e adolescência (é contudo, a idade mínima para o trabalho como menor aprendiz).",
+      "Opção INCORRETA. O limite de 18 anos incompletos marca o fim da fase de adolescência e a transição definitiva para a maioridade civil e penal."
+    ]
   },
   {
     "id": "q6",
@@ -101,7 +136,14 @@ let quizQuestions = [
       "A publicação do edital de homologação."
     ],
     "resposta": 1,
-    "justificativa": "O art. 7º da Lei nº 8.112/1990 estabelece expressamente que 'A investidura em cargo público ocorrerá com a posse'."
+    "justificativa": "O art. 7º da Lei nº 8.112/1990 estabelece expressamente que 'A investidura em cargo público ocorrerá com a posse'.",
+    "explicacoes": [
+      "Opção INCORRETA. A nomeação é apenas um ato administrativo unilateral de provimento do cargo, que precede a investidura formal.",
+      "Opção CORRETA. É com a assinatura do termo de posse que o cidadão aceita as atribuições e deveres do cargo, concretizando a investidura.",
+      "Opção INCORRETA. O exercício representa o efetivo desempenho das funções pelo servidor público, iniciando após a investidura (posse).",
+      "Opção INCORRETA. A aprovação no concurso apenas garante a expectativa de direito à nomeação, não constituindo investidura.",
+      "Opção INCORRETA. A publicação da homologação encerra as etapas do certame e inicia o prazo de validade deste, não tendo relação com a investidura."
+    ]
   }
 ];
 
@@ -258,6 +300,9 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // Initial fetch from backend
     loadAllData();
+    
+    // Render career table
+    renderCarreiraTable();
 });
 
 // Load progress, questions, discursivas, and files
@@ -647,7 +692,28 @@ function submitQuizAnswer() {
         feedbackTitle.style.color = "var(--red-600)";
         feedbackBox.style.borderLeftColor = "var(--red-600)";
     }
-    feedbackText.textContent = q.justificativa;
+    
+    // Render general justification and detailed analysis
+    let htmlContent = `<p style="margin-bottom: 15px; font-weight: 500;">${q.justificativa}</p>`;
+    
+    if (q.explicacoes && Array.isArray(q.explicacoes) && q.explicacoes.length === q.options.length) {
+        htmlContent += `<div class="quiz-detailed-explanations">
+            <h5>Análise das Alternativas:</h5>
+            <ul class="explanation-list">`;
+        q.options.forEach((opt, idx) => {
+            const isCorrect = idx === q.resposta;
+            const badgeClass = isCorrect ? "correct-badge" : "incorrect-badge";
+            const badgeText = isCorrect ? "CORRETA" : "INCORRETA";
+            htmlContent += `
+                <li class="explanation-item">
+                    <strong class="${badgeClass}">${String.fromCharCode(65 + idx)}) ${badgeText}:</strong>
+                    <span>${q.explicacoes[idx]}</span>
+                </li>
+            `;
+        });
+        htmlContent += `</ul></div>`;
+    }
+    feedbackText.innerHTML = htmlContent;
     
     document.getElementById("btn-submit-answer").classList.add("hidden");
     document.getElementById("btn-next-question").classList.remove("hidden");
@@ -850,3 +916,24 @@ document.querySelectorAll(".car-tab-btn").forEach(btn => {
         document.getElementById(`cartab-${btn.dataset.cartab}`).classList.add("active");
     };
 });
+
+// --- 12. DYNAMIC CAREER TABLE RENDERING -------------------
+const SALARIOS_D = [3181.39, 3311.83, 3447.61, 3588.97, 3736.11, 3889.29, 4048.75, 4214.75, 4387.56, 4567.45, 4754.71, 4949.66, 5152.59, 5363.85, 5583.77, 5812.70, 6051.02, 6299.11, 6557.38];
+const SALARIOS_E = [5215.39, 5429.23, 5651.82, 5883.55, 6124.77, 6375.89, 6637.13, 6909.43, 7192.72, 7487.62, 7794.61, 8114.19, 8446.87, 8793.19, 9153.72, 9529.02, 9919.71, 10326.42, 10749.80];
+
+function renderCarreiraTable() {
+    const tbody = document.getElementById("carreira-tabela-body");
+    if (!tbody) return;
+    
+    tbody.innerHTML = "";
+    for (let i = 0; i < 19; i++) {
+        const tr = document.createElement("tr");
+        const padraoStr = (i + 1) < 10 ? `0${i + 1}` : `${i + 1}`;
+        tr.innerHTML = `
+            <td><strong>Padrão ${padraoStr}</strong></td>
+            <td>R$ ${SALARIOS_D[i].toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+            <td>R$ ${SALARIOS_E[i].toLocaleString("pt-BR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+        `;
+        tbody.appendChild(tr);
+    }
+}
