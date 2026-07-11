@@ -163,8 +163,7 @@ a:hover {
 
 /* ----- 3. LAYOUT STRUCTURE -------------------------------- */
 .app-layout {
-  display: grid;
-  grid-template-columns: 260px 1fr;
+  display: block;
   min-height: 100vh;
   padding-top: 38px; /* For accessibility bar */
 }
@@ -1347,14 +1346,36 @@ body.high-contrast .acc-btn {
   border: 2.5px solid #ffffff !important;
 }
 
-/* ----- 13. RESPONSIVE DESIGN (Media Queries) ------------- */
 @media (max-width: 1024px) {
-  .app-layout {
-    grid-template-columns: 1fr;
+  .app-sidebar {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
   }
 
-  .app-sidebar {
-    display: none; /* In a full app, we would make a hamburger menu */
+  .sidebar-brand {
+    padding: var(--space-3);
+    justify-content: center;
+  }
+
+  .sidebar-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .nav-item {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .sidebar-footer {
+    display: none;
   }
 
   .app-main {
