@@ -8,10 +8,153 @@ let currentCargo = "tecnico_assuntos_educacionais";
 let currentTab = "dashboard";
 let checkedItems = [];
 let localFiles = [];
-let quizQuestions = [];
+// --- 1. STATE & GLOBAL CONFIGS -----------------------------
+let currentCargo = "tecnico_assuntos_educacionais";
+let currentTab = "dashboard";
+let checkedItems = [];
+let localFiles = [];
 let currentQuestionIndex = 0;
 let selectedOptionIndex = null;
-let discursivaCases = [];
+
+// Default Mock Questions for Offline/GitHub Pages support
+let quizQuestions = [
+  {
+    "id": "q1",
+    "cargo": "tecnico_assuntos_educacionais",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "Segundo Lev Vygotsky, a distância entre o nível de desenvolvimento real, determinado pela capacidade de resolver problemas de forma independente, e o nível de desenvolvimento potencial, determinado pela resolução de problemas sob a orientação de um adulto ou em colaboração com companheiros mais capazes, define-se como:",
+    "options": [
+      "Zona de Desenvolvimento Proximal (ZDP)",
+      "Estágio de Operações Formais",
+      "Mediação Semiótica",
+      "Adaptação e Assimilação",
+      "Aprendizagem Significativa"
+    ],
+    "resposta": 0,
+    "justificativa": "Para Vygotsky, a Zona de Desenvolvimento Proximal (ZDP) é a distância entre o desenvolvimento real (o que a criança já faz sozinha) e o potencial (o que faz com ajuda). É nela que o ensino deve atuar para impulsionar a aprendizagem."
+  },
+  {
+    "id": "q2",
+    "cargo": "tecnico_assuntos_educacionais",
+    "materia": "Legislação Educacional",
+    "enunciado": "A Lei de Diretrizes e Bases da Educação Nacional (Lei nº 9.394/1996), em seu artigo 3º, estabelece os princípios do ensino. Assinale a alternativa que NÃO corresponde a um desses princípios:",
+    "options": [
+      "Igualdade de condições para o acesso e permanência na escola.",
+      "Liberdade de aprender, ensinar, pesquisar e divulgar a cultura, o pensamento, a arte e o saber.",
+      "Pluralismo de ideias e de concepções pedagógicas.",
+      "Unicidade de convicções políticas e religiosas no ambiente escolar.",
+      "Garantia de padrão de qualidade."
+    ],
+    "resposta": 3,
+    "justificativa": "O princípio correto é a coexistência de instituições públicas e privadas de ensino e o respeito à diversidade, sendo vedada qualquer imposição de unicidade ideológica, política ou religiosa no ambiente escolar."
+  },
+  {
+    "id": "q3",
+    "cargo": "pedagogo",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "No contexto da coordenação pedagógica e gestão escolar, o Projeto Político-Pedagógico (PPP) é compreendido como um instrumento teórico-metodológico que visa a:",
+    "options": [
+      "Cumprir uma exigência puramente burocrática dos órgãos reguladores de ensino.",
+      "Direcionar de forma autocrática as ações dos professores em sala de aula.",
+      "Orientar a prática educativa escolar a partir de uma construção coletiva, refletindo a identidade e as intencionalidades da comunidade escolar.",
+      "Padronizar os conteúdos curriculares em conformidade estrita com as escolas da rede privada.",
+      "Garantir a divisão técnica e fragmentada do trabalho pedagógico na instituição."
+    ],
+    "resposta": 2,
+    "justificativa": "O PPP é um documento de construção coletiva e participativa que define a identidade da escola, suas metas e diretrizes pedagógicas, servindo como guia orientador para a práxis educativa em busca de transformações sociais."
+  },
+  {
+    "id": "q4",
+    "cargo": "pedagogo",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "De acordo com Jean Piaget, o período de desenvolvimento cognitivo caracterizado pelo aparecimento da linguagem, capacidade de representação mental e pelo egocentrismo intelectual denomina-se estágio:",
+    "options": [
+      "Sensório-motor",
+      "Pré-operatório",
+      "Operatório concreto",
+      "Operatório formal",
+      "Abstrato-conceitual"
+    ],
+    "resposta": 1,
+    "justificativa": "O estágio pré-operatório (aproximadamente de 2 a 7 anos) é marcado pela emergência da função simbólica (linguagem, jogo simbólico), pensamento egocêntrico e incapacidade de realizar operações mentais reversíveis."
+  },
+  {
+    "id": "q5",
+    "cargo": "assistente_alunos",
+    "materia": "Conhecimentos Específicos (ECA)",
+    "enunciado": "Segundo o Estatuto da Criança e do Adolescente (Lei nº 8.069/1990), considera-se criança, para os efeitos desta Lei, a pessoa até:",
+    "options": [
+      "Doze anos de idade incompletos.",
+      "Doze anos de idade completos.",
+      "Dez anos de idade incompletos.",
+      "Quatorze anos de idade incompletos.",
+      "Dezoito anos de idade incompletos."
+    ],
+    "resposta": 0,
+    "justificativa": "O art. 2º do ECA define: 'Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.'"
+  },
+  {
+    "id": "q6",
+    "cargo": "assistente_alunos",
+    "materia": "Legislação do Serviço Público",
+    "enunciado": "De acordo com a Lei nº 8.112/1990, a investidura em cargo público ocorrerá com:",
+    "options": [
+      "A nomeação.",
+      "A posse.",
+      "O exercício.",
+      "A aprovação no concurso público.",
+      "A publicação do edital de homologação."
+    ],
+    "resposta": 1,
+    "justificativa": "O art. 7º da Lei nº 8.112/1990 estabelece expressamente que 'A investidura em cargo público ocorrerá com a posse'."
+  }
+];
+
+// Default Mock Discursivas for Offline/GitHub Pages support
+let discursivaCases = [
+  {
+    "id": "d1",
+    "cargo": "tecnico_assuntos_educacionais",
+    "titulo": "Estudo de Caso — EPT e Inclusão",
+    "contexto": "Um docente de um curso técnico integrado de Informática do IF Baiano procura a equipe de assuntos educacionais relatando dificuldades para incluir um estudante com deficiência visual (cegueira) em suas aulas práticas de desenvolvimento web. O docente afirma que as ferramentas de programação utilizadas não são acessíveis e que o estudante está ficando atrasado em relação à turma, apresentando desmotivação e risco de evasão.",
+    "pergunta": "Com base na legislação educacional (LDB e Estatuto da Pessoa com Deficiência) e nas teorias pedagógicas de mediação e inclusão, formule uma proposta de intervenção pedagógica que contemple: 1) Ações imediatas de adaptação curricular e acessibilidade tecnológica; 2) Orientação pedagógica ao docente; 3) Acompanhamento do estudante para evitar a evasão.",
+    "criterios": [
+      "Referência legal à inclusão escolar (Lei 13.146/2015 e LDB Art. 59)",
+      "Proposição de tecnologias assistivas específicas (leitores de tela, editores de código acessíveis)",
+      "Ações de mediação pedagógica em colaboração docente-TAE",
+      "Estratégias de acolhimento e suporte psicoemocional para evitar a evasão"
+    ],
+    "resposta_modelo": "Uma resposta exemplar deve indicar a necessidade imediata de articular o Núcleo de Apoio às Pessoas com Necessidades Educacionais Específicas (NAPNE). Deve propor a adaptação dos materiais didáticos (uso de leitores de tela como NVDA/DOSVOX e editores como VS Code com extensões de acessibilidade), formação continuada em serviço para o docente com base no Desenho Universal para a Aprendizagem (DUA), e implementação de monitoria ou tutoria de pares (aprendizagem colaborativa de Vygotsky) para promover a inclusão e pertencimento do estudante, mitigando a evasão sob a égide do direito à educação integral."
+  },
+  {
+    "id": "d2",
+    "cargo": "pedagogo",
+    "titulo": "Estudo de Caso — Integração Curricular na EPT",
+    "contexto": "Durante a elaboração do Projeto Político-Pedagógico (PPP) de um campus do IFBA, surge um debate acalorado entre a equipe técnica e os professores de disciplinas propedêuticas (História, Geografia, Português) e técnicas (Mecânica, Edificações). Os professores técnicos defendem que o currículo deve focar estritamente nas competências operacionais exigidas pelo mercado de trabalho, enquanto os professores do núcleo comum demandam maior espaço para reflexão crítica e formação humanística.",
+    "pergunta": "Como Pedagogo(a), disserte sobre o conceito de 'Trabalho como Princípio Educativo' e 'Integração Curricular' na Educação Profissional e Tecnológica (EPT). Apresente uma estratégia de mediação pedagógica para integrar os dois núcleos (técnico e geral) no PPP, superando a dicotomia entre trabalho manual e trabalho intelectual.",
+    "criterios": [
+      "Fundamentação teórica do Trabalho como Princípio Educativo (Saviani, Ramos, Frigotto)",
+      "Definição de Educação Integral e travessia da divisão histórica das classes",
+      "Proposição de projetos integradores ou currículos temáticos unificados",
+      "Papel do pedagogo na articulação das reuniões de planejamento coletivo"
+    ],
+    "resposta_modelo": "O pedagogo deve fundamentar a discussão teórica nos conceitos de omnilateralidade e politecnia, demonstrando que o trabalho não é apenas adestramento para o mercado, mas princípio ontológico de produção da existência humana. Deve-se propor a superação da dualidade educativa por meio de Projetos Integradores de caráter interdisciplinar que unam, por exemplo, a análise histórica das revoluções industriais à aplicação prática de mecânica ou edificações, reestruturando o PPP para que os eixos de Ciência, Cultura, Trabalho e Tecnologia atravessem transversalmente todas as disciplinas pedagógicas."
+  },
+  {
+    "id": "d3",
+    "cargo": "assistente_alunos",
+    "titulo": "Estudo de Caso — Conflito e Mediação Escolar",
+    "contexto": "Um Assistente de Alunos do IF Baiano flagra, no pátio do campus durante o intervalo, dois estudantes do ensino médio integrado em uma discussão verbal agressiva que está prestes a evoluir para agressão física. A briga foi motivada por ofensas e boatos difamatórios espalhados por meio de um grupo de mensagens em redes sociais (cyberbullying). Vários outros estudantes estão ao redor incentivando o conflito e gravando com celulares.",
+    "pergunta": "Considerando o papel do Assistente de Alunos na garantia da convivência escolar harmoniosa e as diretrizes do ECA (Estatuto da Criança e do Adolescente), descreva: 1) A intervenção imediata para conter a briga física; 2) Os procedimentos administrativos e pedagógicos a serem adotados na sequência; 3) Ações preventivas a serem propostas para mitigar o cyberbullying e a cultura de violência na escola.",
+    "criterios": [
+      "Abordagem segura e mediação verbal imediata para separação sem uso de força física desmedida",
+      "Acolhimento individualizado dos envolvidos em ambiente reservado",
+      "Encaminhamento à equipe pedagógica/assistência estudantil e registro formal do ocorrido",
+      "Proposição de projetos de conscientização de cidadania digital e empatia (ECA Art. 53 e 70)"
+    ],
+    "resposta_modelo": "O assistente de alunos deve intervir imediatamente de forma firme, porém calma, posicionando-se verbalmente e dispersando os espectadores. Deve conduzir os dois estudantes envolvidos a salas separadas para acalmar os ânimos, ouvindo as versões de forma individualizada sem julgamentos imediatos. O ocorrido deve ser formalmente registrado no sistema de ocorrências do campus e encaminhado à Coordenação Pedagógica. A longo prazo, o profissional deve propor à equipe pedagógica a realização de rodas de conversa e oficinas de Justiça Restaurativa e Letramento Digital, visando conscientizar sobre os limites éticos na internet e combater o cyberbullying sob o amparo do ECA."
+  }
+];
 
 // Study topics for each cargo (LDB, 8.112/90, EPT, ECA, and specific educational guidelines)
 const CHECKLISTS = {
@@ -140,18 +283,25 @@ function loadAllData() {
     fetch("/api/questions")
         .then(res => res.json())
         .then(data => {
-            quizQuestions = data;
+            if (data && Array.isArray(data) && data.length > 0) {
+                quizQuestions = data;
+            }
         })
-        .catch(err => console.log("Failed to load questions.", err));
+        .catch(err => console.log("Failed to load questions. Using default fallback questions.", err));
 
     // 3. Fetch Discursivas
     fetch("/api/discursivas")
         .then(res => res.json())
         .then(data => {
-            discursivaCases = data;
+            if (data && Array.isArray(data) && data.length > 0) {
+                discursivaCases = data;
+            }
             renderDiscursivas();
         })
-        .catch(err => console.log("Failed to load discursivas.", err));
+        .catch(err => {
+            console.log("Failed to load discursivas. Using default fallback discursivas.", err);
+            renderDiscursivas();
+        });
 
     // 4. Fetch Progress from backend or localStorage
     fetch("/api/progress")
