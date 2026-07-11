@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YLuna85 Labs — Hub de Estudos Concursos IFs</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Style Sheet -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <!-- Accessibility Bar -->
+    <div class="accessibility-bar" role="toolbar" aria-label="Controles de Acessibilidade">
+        <div class="acc-container">
+            <span class="acc-label">Acessibilidade:</span>
+            <div class="acc-group">
+                <button id="btn-contrast" class="acc-btn" aria-label="Alternar alto contraste" title="Alto Contraste">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <span>Contraste</span>
+                </button>
+                <div class="font-controls">
+                    <button id="btn-font-dec" class="acc-btn" aria-label="Diminuir fonte" title="Diminuir Fonte">A−</button>
+                    <button id="btn-font-normal" class="acc-btn" aria-label="Fonte padrão" title="Fonte Padrão">A</button>
+                    <button id="btn-font-inc" class="acc-btn" aria-label="Aumentar fonte" title="Aumentar Fonte">A+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="app-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-logo">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+                <div class="brand-text">
+                    <h2>YLuna85 Labs</h2>
+                    <span>Estudos Concursos IFs</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="dashboard">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-tab="trilhas">
+                    <i class="fa-solid fa-list-check"></i>
+                    <span>Trilhas de Estudo</span>
+                </button>
+                <button class="nav-item" data-tab="simulados">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Simulados</span>
+                </button>
+                <button class="nav-item" data-tab="biblioteca">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <span>Biblioteca Digital</span>
+                </button>
+                <button class="nav-item" data-tab="carreira">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Carreira & Salários</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <div>
+                        <strong>Yuri & Ana Gabriela</strong>
+                        <span>Gépraxis Line</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="app-main">
+            <!-- Top Header -->
+            <header class="app-header">
+                <div class="header-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="global-search" placeholder="Buscar assuntos, leis ou provas...">
+                </div>
+                <div class="header-controls">
+                    <div class="certame-selector">
+                        <label for="select-cargo-global">Foco do Cargo:</label>
+                        <select id="select-cargo-global">
+                            <option value="tecnico_assuntos_educacionais" selected>Técnico em Assuntos Educacionais (E)</option>
+                            <option value="pedagogo">Pedagogo (E)</option>
+                            <option value="assistente_alunos">Assistente de Alunos (D)</option>
+                        </select>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dynamic Tab Content Panels -->
+            <div class="content-container">
+                
+                <!-- 1. DASHBOARD PANEL -->
+                <section id="tab-dashboard" class="tab-panel active">
+                    <div class="dashboard-grid">
+                        <!-- Welcome Card -->
+                        <div class="dashboard-card welcome-card span-2">
+                            <div class="welcome-text">
+                                <h1>Prepare-se para a Rede Federal!</h1>
+                                <p>Organize seus estudos, faça simulados e acesse legislações e provas anteriores dos cargos de <strong>Pedagogo</strong>, <strong>TAE</strong> e <strong>Assistente de Alunos</strong> para o IFBA e IF Baiano.</p>
+                                <div class="welcome-actions">
+                                    <button class="btn btn-primary" onclick="switchTab('trilhas')">
+                                        <i class="fa-solid fa-circle-play"></i> Continuar Trilha
+                                    </button>
+                                    <button class="btn btn-secondary" onclick="switchTab('simulados')">
+                                        <i class="fa-solid fa-pen-to-square"></i> Iniciar Simulado
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="welcome-icon">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
+                        </div>
+
+                        <!-- Mini Calendar/Countdown -->
+                        <div class="dashboard-card countdown-card">
+                            <h3>Previsão do Edital</h3>
+                            <div class="countdown-display">
+                                <div class="countdown-unit">
+                                    <span id="countdown-days">--</span>
+                                    <small>Dias</small>
+                                </div>
+                            </div>
+                            <p class="countdown-status">Estudos em Modo Ativo. Mantenha o Ritmo!</p>
+                        </div>
+
+                        <!-- Progress Card -->
+                        <div class="dashboard-card progress-card span-2">
+                            <h3>Progresso na Trilha Atual</h3>
+                            <div class="progress-details">
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar-fill" id="dashboard-progress-fill" style="width: 0%"></div>
+                                </div>
+                                <span class="progress-percentage" id="dashboard-progress-pct">0%</span>
+                            </div>
+                            <div class="progress-stats">
+                                <div>
+                                    <strong id="dashboard-checked-count">0</strong>
+                                    <span>Tópicos Concluídos</span>
+                                </div>
+                                <div>
+                                    <strong id="dashboard-total-count">0</strong>
+                                    <span>Tópicos Totais</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Resources Links -->
+                        <div class="dashboard-card links-card">
+                            <h3>Acesso Rápido</h3>
+                            <ul class="quick-links">
+                                <li>
+                                    <a href="https://concursos.ifbaiano.edu.br" target="_blank">
+                                        <i class="fa-solid fa-globe"></i> Portal Concursos IF Baiano
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://portal.ifba.edu.br/concursos" target="_blank">
+                                        <i class="fa-solid fa-globe"></i> Portal Concursos IFBA
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l8112cons.htm" target="_blank">
+                                        <i class="fa-solid fa-scale-balanced"></i> Lei nº 8.112/1990 (RJU)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.planalto.gov.br/ccivil_03/leis/l9394.htm" target="_blank">
+                                        <i class="fa-solid fa-scale-balanced"></i> Lei nº 9.394/1996 (LDB)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. TRILHAS DE ESTUDO PANEL -->
+                <section id="tab-trilhas" class="tab-panel">
+                    <div class="section-header">
+                        <h2>Trilha de Aprendizagem e Checklist</h2>
+                        <p>Acompanhe e marque os tópicos recomendados para o edital do cargo focado.</p>
+                        <div class="trilha-actions">
+                            <button class="btn btn-sm btn-secondary" id="btn-check-all">Marcar Todos</button>
+                            <button class="btn btn-sm btn-secondary" id="btn-uncheck-all">Desmarcar Todos</button>
+                        </div>
+                    </div>
+
+                    <div class="trilha-container">
+                        <!-- Progress Header -->
+                        <div class="trilha-progress-bar">
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="trilha-progress-fill" style="width: 0%"></div>
+                            </div>
+                            <span id="trilha-progress-text">0 / 0 concluídos (0%)</span>
+                        </div>
+
+                        <!-- Checklists Content (Rendered Dynamically via JS) -->
+                        <div id="checklists-root"></div>
+                    </div>
+                </section>
+
+                <!-- 3. SIMULADOS PANEL -->
+                <section id="tab-simulados" class="tab-panel">
+                    <div class="simulados-layout">
+                        <!-- Navigation Sidebar inside Simulados -->
+                        <div class="simulados-nav">
+                            <button class="sim-nav-btn active" data-subtab="objetivas">
+                                <i class="fa-solid fa-list-ol"></i> Questões Objetivas
+                            </button>
+                            <button class="sim-nav-btn" data-subtab="discursivas">
+                                <i class="fa-solid fa-paragraph"></i> Casos Discursivos
+                            </button>
+                        </div>
+
+                        <!-- Simulados Content area -->
+                        <div class="simulados-content">
+                            <!-- A. OBJETIVAS PANEL -->
+                            <div id="subtab-objetivas" class="subtab-panel active">
+                                <div class="quiz-setup" id="quiz-setup">
+                                    <h3>Simulador de Provas Objetivas</h3>
+                                    <p>Responda a questões baseadas nos concursos passados dos Institutos Federais e treine seus conhecimentos.</p>
+                                    <div class="setup-form">
+                                        <div class="form-group">
+                                            <label for="quiz-subject-filter">Filtrar Matéria:</label>
+                                            <select id="quiz-subject-filter">
+                                                <option value="todos" selected>Todas as Matérias</option>
+                                                <option value="Conhecimentos Específicos">Conhecimentos Específicos</option>
+                                                <option value="Legislação Educacional">Legislação Educacional</option>
+                                                <option value="Legislação do Serviço Público">Legislação / RJU</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary" id="btn-start-quiz">Iniciar Simulado</button>
+                                    </div>
+                                </div>
+
+                                <div class="quiz-container hidden" id="quiz-container">
+                                    <div class="quiz-header">
+                                        <span class="quiz-badge" id="quiz-materia-badge">Matéria</span>
+                                        <span class="quiz-counter" id="quiz-question-counter">Questão 1/1</span>
+                                    </div>
+                                    <div class="quiz-question" id="quiz-question-text">
+                                        Carregando enunciado...
+                                    </div>
+                                    <div class="quiz-options" id="quiz-options-container">
+                                        <!-- Options injected here -->
+                                    </div>
+                                    <div class="quiz-actions">
+                                        <button class="btn btn-secondary" id="btn-submit-answer">Verificar Resposta</button>
+                                        <button class="btn btn-primary hidden" id="btn-next-question">Próxima Questão <i class="fa-solid fa-arrow-right"></i></button>
+                                    </div>
+                                    <div class="quiz-feedback hidden" id="quiz-feedback-box">
+                                        <strong id="quiz-feedback-title">Correto!</strong>
+                                        <p id="quiz-feedback-text">Justificativa da resposta.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- B. DISCURSIVAS PANEL -->
+                            <div id="subtab-discursivas" class="subtab-panel">
+                                <div class="discursivas-list" id="discursivas-root">
+                                    <!-- Dynamic injected cases -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. BIBLIOTECA PANEL -->
+                <section id="tab-biblioteca" class="tab-panel">
+                    <div class="section-header">
+                        <h2>Biblioteca Digital e Downloads</h2>
+                        <p>Baixe e estude através de editais compilados, cadernos de provas e gabaritos de concursos passados.</p>
+                    </div>
+
+                    <div class="biblioteca-container">
+                        <div class="local-files-section">
+                            <h3><i class="fa-solid fa-folder-open"></i> Arquivos Locais Disponíveis</h3>
+                            <p class="section-desc">Esta lista é preenchida dinamicamente fazendo a varredura das pastas locais do projeto (se rodando em modo local com Flask).</p>
+                            <div class="file-grid" id="local-files-root">
+                                <!-- Injected files -->
+                                <div class="no-files-card">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <h4>Nenhum arquivo local indexado</h4>
+                                    <p>Coloque os PDFs de provas e editais nas pastas do projeto e inicie o servidor Python para acessá-los aqui.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. CARREIRA PANEL -->
+                <section id="tab-carreira" class="tab-panel">
+                    <div class="section-header">
+                        <h2>Estrutura de Carreira & Salários (PCCTAE)</h2>
+                        <p>Consulte a remuneração, vencimentos básicos e progressões da Carreira TAE Federal.</p>
+                    </div>
+
+                    <div class="carreira-container">
+                        <div class="carreira-tabs">
+                            <button class="car-tab-btn active" data-cartab="tabela-salarios">Vencimento Básico</button>
+                            <button class="car-tab-btn" data-cartab="progressao">Regras de Progressão</button>
+                        </div>
+
+                        <!-- Salary Table -->
+                        <div class="carreira-tab-content active" id="cartab-tabela-salarios">
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Classe / Padrão</th>
+                                            <th>Nível D (Médio/Técnico)</th>
+                                            <th>Nível E (Superior)</th>
+                                            <th>Auxílios Inclusos (Estimativa)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Padrão I (Inicial)</strong></td>
+                                            <td>R$ 2.667,19</td>
+                                            <td>R$ 4.556,92</td>
+                                            <td>+ Alimentação (R$ 1.000,00) + Saúde</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Padrão II</strong></td>
+                                            <td>R$ 2.771,21</td>
+                                            <td>R$ 4.734,64</td>
+                                            <td>Progressão por Mérito (~3,9%)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Padrão III</strong></td>
+                                            <td>R$ 2.879,29</td>
+                                            <td>R$ 4.919,29</td>
+                                            <td>Progressão por Capacitação</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Padrão IV</strong></td>
+                                            <td>R$ 2.991,58</td>
+                                            <td>R$ 5.111,14</td>
+                                            <td>--</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Padrão V (Final Nível 1)</strong></td>
+                                            <td>R$ 3.108,25</td>
+                                            <td>R$ 5.310,47</td>
+                                            <td>Aceleração por Titulação aplicável</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="titulacao-box">
+                                <h4><i class="fa-solid fa-graduation-cap"></i> Incentivo à Qualificação (Adicional de Titulação)</h4>
+                                <p>Os salários base são acrescidos de percentuais caso o servidor possua titulação superior à exigida para o cargo:</p>
+                                <ul>
+                                    <li><strong>Especialização (Pós-graduação Lato Sensu):</strong> +30%</li>
+                                    <li><strong>Mestrado (Stricto Sensu):</strong> +52%</li>
+                                    <li><strong>Doutorado (Stricto Sensu):</strong> +75%</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Progression Rules -->
+                        <div class="carreira-tab-content" id="cartab-progressao">
+                            <div class="progression-cards">
+                                <div class="prog-card">
+                                    <h4><i class="fa-solid fa-calendar-days"></i> Progressão por Mérito Profissional</h4>
+                                    <p>Ocorre a cada <strong>18 meses</strong> de efetivo exercício, desde que o servidor obtenha avaliação de desempenho positiva. Representa uma mudança de padrão de vencimento na mesma classe (salto de ~3.9%).</p>
+                                </div>
+                                <div class="prog-card">
+                                    <h4><i class="fa-solid fa-certificate"></i> Progressão por Capacitação Profissional</h4>
+                                    <p>Ocorre pela obtenção de certificados de cursos de capacitação compatíveis com o cargo, respeitada a carga horária mínima exigida em lei e o interstício de 18 meses.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-banner" class="toast-banner hidden">
+        <span id="toast-text">Operação realizada com sucesso!</span>
+    </div>
+
+    <!-- Custom Script JS -->
+    <script src="static/js/app.js"></script>
+</body>
+</html>

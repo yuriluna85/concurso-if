@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1",
+    "cargo": "tecnico_assuntos_educacionais",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "Segundo Lev Vygotsky, a distância entre o nível de desenvolvimento real, determinado pela capacidade de resolver problemas de forma independente, e o nível de desenvolvimento potencial, determinado pela resolução de problemas sob a orientação de um adulto ou em colaboração com companheiros mais capazes, define-se como:",
+    "options": [
+      "Zona de Desenvolvimento Proximal (ZDP)",
+      "Estágio de Operações Formais",
+      "Mediação Semiótica",
+      "Adaptação e Assimilação",
+      "Aprendizagem Significativa"
+    ],
+    "resposta": 0,
+    "justificativa": "Para Vygotsky, a Zona de Desenvolvimento Proximal (ZDP) é a distância entre o desenvolvimento real (o que a criança já faz sozinha) e o potencial (o que faz com ajuda). É nela que o ensino deve atuar para impulsionar a aprendizagem."
+  },
+  {
+    "id": "q2",
+    "cargo": "tecnico_assuntos_educacionais",
+    "materia": "Legislação Educacional",
+    "enunciado": "A Lei de Diretrizes e Bases da Educação Nacional (Lei nº 9.394/1996), em seu artigo 3º, estabelece os princípios do ensino. Assinale a alternativa que NÃO corresponde a um desses princípios:",
+    "options": [
+      "Igualdade de condições para o acesso e permanência na escola.",
+      "Liberdade de aprender, ensinar, pesquisar e divulgar a cultura, o pensamento, a arte e o saber.",
+      "Pluralismo de ideias e de concepções pedagógicas.",
+      "Unicidade de convicções políticas e religiosas no ambiente escolar.",
+      "Garantia de padrão de qualidade."
+    ],
+    "resposta": 3,
+    "justificativa": "O princípio correto é a coexistência de instituições públicas e privadas de ensino e o respeito à diversidade, sendo vedada qualquer imposição de unicidade ideológica, política ou religiosa no ambiente escolar."
+  },
+  {
+    "id": "q3",
+    "cargo": "pedagogo",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "No contexto da coordenação pedagógica e gestão escolar, o Projeto Político-Pedagógico (PPP) é compreendido como um instrumento teórico-metodológico que visa a:",
+    "options": [
+      "Cumprir uma exigência puramente burocrática dos órgãos reguladores de ensino.",
+      "Direcionar de forma autocrática as ações dos professores em sala de aula.",
+      "Orientar a prática educativa escolar a partir de uma construção coletiva, refletindo a identidade e as intencionalidades da comunidade escolar.",
+      "Padronizar os conteúdos curriculares em conformidade estrita com as escolas da rede privada.",
+      "Garantir a divisão técnica e fragmentada do trabalho pedagógico na instituição."
+    ],
+    "resposta": 2,
+    "justificativa": "O PPP é um documento de construção coletiva e participativa que define a identidade da escola, suas metas e diretrizes pedagógicas, servindo como guia orientador para a práxis educativa em busca de transformações sociais."
+  },
+  {
+    "id": "q4",
+    "cargo": "pedagogo",
+    "materia": "Conhecimentos Específicos",
+    "enunciado": "De acordo com Jean Piaget, o período de desenvolvimento cognitivo caracterizado pelo aparecimento da linguagem, capacidade de representação mental e pelo egocentrismo intelectual denomina-se estágio:",
+    "options": [
+      "Sensório-motor",
+      "Pré-operatório",
+      "Operatório concreto",
+      "Operatório formal",
+      "Abstrato-conceitual"
+    ],
+    "resposta": 1,
+    "justificativa": "O estágio pré-operatório (aproximadamente de 2 a 7 anos) é marcado pela emergência da função simbólica (linguagem, jogo simbólico), pensamento egocêntrico e incapacidade de realizar operações mentais reversíveis."
+  },
+  {
+    "id": "q5",
+    "cargo": "assistente_alunos",
+    "materia": "Conhecimentos Específicos (ECA)",
+    "enunciado": "Segundo o Estatuto da Criança e do Adolescente (Lei nº 8.069/1990), considera-se criança, para os efeitos desta Lei, a pessoa até:",
+    "options": [
+      "Doze anos de idade incompletos.",
+      "Doze anos de idade completos.",
+      "Dez anos de idade incompletos.",
+      "Quatorze anos de idade incompletos.",
+      "Dezoito anos de idade incompletos."
+    ],
+    "resposta": 0,
+    "justificativa": "O art. 2º do ECA define: 'Considera-se criança, para os efeitos desta Lei, a pessoa até doze anos de idade incompletos, e adolescente aquela entre doze e dezoito anos de idade.'"
+  },
+  {
+    "id": "q6",
+    "cargo": "assistente_alunos",
+    "materia": "Legislação do Serviço Público",
+    "enunciado": "De acordo com a Lei nº 8.112/1990, a investidura em cargo público ocorrerá com:",
+    "options": [
+      "A nomeação.",
+      "A posse.",
+      "O exercício.",
+      "A aprovação no concurso público.",
+      "A publicação do edital de homologação."
+    ],
+    "resposta": 1,
+    "justificativa": "O art. 7º da Lei nº 8.112/1990 estabelece expressamente que 'A investidura em cargo público ocorrerá com a posse'."
+  }
+]
